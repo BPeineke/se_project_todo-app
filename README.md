@@ -1,14 +1,14 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+Thw TO DO App is designed to create maintain, and update a "To Do List" for the user to simplyfy task management and completion tracking
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+The App is able to determine and record whether certain actionable items have been completed, allowing a user the ability to track the completion of therir taks they set themselves.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+The biggest differentiator to theis project compared th previous projects is the use of Validators in Java to ensure the actions and the content are rendered and implimented as intended by the requirements of the App.
 
 ## Deployment
 
