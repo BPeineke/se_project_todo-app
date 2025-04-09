@@ -12,6 +12,8 @@ The biggest differentiator to theis project compared th previous projects is the
 
 ## Deployment
 
-This project is deployed on GitHub Pages:
+This project is on GitHub Pages:
+The project can be accessed here:
+https://github.com/BPeineke/se_project_todo-app.git
 
-- ADD LINK HERE
+how do I deploy with the free version of GitHub?
