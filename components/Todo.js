@@ -24,22 +24,20 @@ class Todo {
       .cloneNode(true);
 
     const todoNameEl = this._todoElement.querySelector(".todo__name");
-    //const todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
-    //const todoLabel = this._todoElement.querySelector(".todo__label");
+
     const todoDate = this._todoElement.querySelector(".todo__date");
     const todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
 
     todoNameEl.textContent = this._data.name;
+    todoDate.textContent = new Date(this._data.date).toLocaleDateString();
 
     //
     this._generateCheckBoxEl();
     this._setEventListeners();
-    // todoCheckboxEl.checked = this._data.completed;
-    //To do impliment dates
-
-    // todoCheckboxEl.id = "todo-${this._data.id}";
-    // todoLabel.setAttribute("for", "todo-${this.data.id}");
-
+    const deleteBtn = this._todoElement.querySelector(".todo__delete-btn");
+    deleteBtn.addEventListener("click", () => {
+      this._todoElement.remove();
+    });
     return this._todoElement;
   }
 }
