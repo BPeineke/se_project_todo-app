@@ -44,6 +44,7 @@ class FormValidator {
         this._toggleButtonState();
       });
     });
+    newTodoValidator.resetValidation();
   }
 
   enableValidation() {
