@@ -10,7 +10,12 @@ class FormValidator {
     this._inputList = "";
   }
 
-  _checkInputValidity() {}
+  _checkInputValidity(inputElement) {
+    const id = inputElement.id;
+    const errorMessageEl = document.querySelector(`#${id}-error`);
+    errorMessageEl.textContent = inputElement.validationMessage;
+    errorMessageEl.classList.add("popup__error_visible");
+  }
 
   _hasInvalidInput() {
     return this._inputList.some((inputElement) => {
@@ -36,7 +41,7 @@ class FormValidator {
       this._submitButtonSelector
     );
 
-    this._toggleButtonState();
+    //this._toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
@@ -44,7 +49,6 @@ class FormValidator {
         this._toggleButtonState();
       });
     });
-    newTodoValidator.resetValidation();
   }
 
   enableValidation() {
