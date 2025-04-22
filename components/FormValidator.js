@@ -41,7 +41,7 @@ class FormValidator {
       this._submitButtonSelector
     );
 
-    //this._toggleButtonState();
+    this._toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
@@ -60,7 +60,7 @@ class FormValidator {
 
   resetValidation() {
     this._formEl.reset();
-    this._submitButtonSelector.classList.add(this._inactiveButtonClass);
+    this._toggleButtonState(this._inactiveButtonClass);
   }
 }
 
