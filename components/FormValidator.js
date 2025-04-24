@@ -7,14 +7,13 @@ class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._formEl = formEl;
-    this._inputList = "";
   }
 
   _checkInputValidity(inputElement) {
     const id = inputElement.id;
     const errorMessageEl = document.querySelector(`#${id}-error`);
     errorMessageEl.textContent = inputElement.validationMessage;
-    errorMessageEl.classList.add("popup__error_visible");
+    errorMessageEl.classList.add(this._errorClass);
   }
 
   _hasInvalidInput() {
@@ -60,7 +59,7 @@ class FormValidator {
 
   resetValidation() {
     this._formEl.reset();
-    this._toggleButtonState(this._inactiveButtonClass);
+    this._toggleButtonState();
   }
 }
 
