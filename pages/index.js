@@ -35,14 +35,6 @@ const addTodoPopup = new PopupWithForm({
 
 todoCounter.setTotalCount(initialTodos.length);
 
-//function handleDeleteTodo(todoId) {
-//  const todoElement = document.querySelector(`[data-todo-id="${todoId}"]`);
-//  if (todoElement) {
-//    todoElement.remove();
-//    todoCounter.decrement();
-//  }
-//}
-
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template", todoCounter);
   const todoElement = todo.getView();
@@ -68,24 +60,9 @@ addTodoPopup.setEventListeners();
 
 addTodoButton.addEventListener("click", () => {
   console.log("Button clicked");
-  console.log(addTodoPopup); // Check if popup object exists
+  console.log(addTodoPopup);
   addTodoPopup.open();
 });
-
-//addTodoForm.addEventListener("submit", (evt) => {
-//  evt.preventDefault();
-// const name = evt.target.name.value;
-//  const dateInput = evt.target.date.value;
-//
-//  const date = new Date(dateInput);
-//  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-//
-//  const id = uuidv4();
-//  const values = { name, date, id };
-//  renderTodo(values); //use addItem Method instead of
-//  newTodoValidator.resetValidation();
-//  addTodoPopup.close();
-//});
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
 newTodoValidator.enableValidation();
