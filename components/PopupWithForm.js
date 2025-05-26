@@ -15,6 +15,7 @@ class PopupWithForm extends Popup {
       formValues[input.name] = input.value;
     });
     return formValues;
+    this._form.reset();
   }
 
   setEventListeners() {
@@ -29,7 +30,6 @@ class PopupWithForm extends Popup {
   // this._form.reset()
   close() {
     super.close();
-    this._form.reset();
   }
 }
 
