@@ -1,5 +1,6 @@
 .button {
   background-color: #5877e7;
+  margin-left: auto;
 }
 
 .button:hover {

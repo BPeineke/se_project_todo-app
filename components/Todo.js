@@ -1,9 +1,12 @@
-import TodoCounter from "./TodoCounter.js";
+//import TodoCounter from "./TodoCounter.js";
 class Todo {
-  constructor(data, selector, todocounter) {
+  constructor(data, selector, handleDelete, handleChange) {
     this._data = data;
+    this._completed = data.completed;
     this._templateElement = document.querySelector(selector);
-    this._todoCounter = todocounter;
+    //this._todoCounter = todocounter;
+    this._handlechange = handleChange;
+    this._handleDelete = handleDelete;
     //this._todoCounter.increment();
   }
 
@@ -11,32 +14,15 @@ class Todo {
     // Add delete button event listener
     const deleteButton = this._todoElement.querySelector(".todo__delete-btn");
     deleteButton.addEventListener("click", () => {
-      if (this._data.completed) {
-        this._todoCounter.decrementCompleted();
-      }
-      this._todoCounter.decrement();
+      this._handleDelete(this._completed);
       this._todoElement.remove();
     });
 
     this._todoCheckboxEl.addEventListener("change", (event) => {
-      this._data.completed = !this._data.completed;
-      if (event.target.checked) {
-        this._todoCounter.incrementCompleted();
-      } else {
-        this._todoCounter.decrementCompleted();
-      }
+      this._completed = event.target.checked;
+      this._handlechange(this._completed);
     });
   }
-
-  // Add this delete button event listener
-  // const deleteButton = this._todoElement.querySelector(".todo__delete-btn");
-  // deleteButton.addEventListener("click", () => {
-  //   if (this._data.completed) {
-  //     this._todoCounter.decrementCompleted();
-  //   }
-  //   this._todoCounter.decrement();
-  //   this._todoElement.remove();
-  // });
 
   _generateCheckBoxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");

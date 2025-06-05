@@ -2,6 +2,7 @@
   border-bottom: 1px solid #ddd;
   display: flex;
   padding-bottom: 12px;
+  justify-content: space-between;
 }
 
 .header__title {

@@ -18,6 +18,11 @@ export default class TodoCounter {
     this._completedCount--;
     this._updateCounters();
   }
+
+  updateCompleted(shouldincrement) {
+    this._completedCount += shouldincrement ? 1 : -1;
+    this._updateCounters();
+  }
   // Get current count
   getCurrentCount() {
     return this._currentCount;
